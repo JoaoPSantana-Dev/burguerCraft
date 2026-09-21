@@ -1,5 +1,5 @@
 import { Ionicons } from "@expo/vector-icons"
-import { View, Text, StyleSheet} from "react-native"
+import { View, Text, StyleSheet, Image} from "react-native"
 
 export default function Header(){
     return(
@@ -11,10 +11,7 @@ export default function Header(){
             <Text style={styles.headerDescription}>Sabor artesanal de verdade</Text>
             </View>
 
-            <View style={styles.headerIcon}>
-                <Ionicons name="person" size={25} color="rgb(20, 14, 11)"></Ionicons>
-            </View>
-
+            <Image style={styles.image} source={require("../../assets/mulher.png")}></Image>
         </View>
 
     )
@@ -23,25 +20,25 @@ export default function Header(){
 const styles = StyleSheet.create({
     header:{
         width: "100%",
-        paddingHorizontal: 24,
+        paddingHorizontal: 20,
         paddingTop: 60,
         paddingBottom: 20,
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems:"center",
-        backgroundColor: "#F5DEB3"
+        backgroundColor: "#F8F9FA"
     },
 
     headerTitle:{
-        fontSize:18,
+        fontSize:22,
         fontWeight:"800",
-        color: "#2f2d2c"
+        color: "#1E1E1E"
     },
 
     headerDescription:{
         fontSize: 12,
-        color: "#9b9b9b",
-        marginTop:4
+        color: "#6C757D",
+        marginBottom:24
     },
 
     headerIcon:{
@@ -51,6 +48,12 @@ const styles = StyleSheet.create({
         backgroundColor:"#c67c4e",
         alignItems:"center",
         justifyContent:"center"
+    },
+
+    image:{
+        height:44,
+        width:44,
+        borderRadius:22
     }
 
 
