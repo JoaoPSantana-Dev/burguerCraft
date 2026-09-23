@@ -2,6 +2,7 @@ import { useFonts} from "expo-font"
 import { Outfit_800ExtraBold } from "@expo-google-fonts/outfit"
 import { Inter_400Regular} from "@expo-google-fonts/inter"
 import { Inter_500Medium} from "@expo-google-fonts/inter"
+import { Inter_600SemiBold} from "@expo-google-fonts/inter"
 import { Inter_700Bold} from "@expo-google-fonts/inter"
 import { useState } from 'react';
 import { Ionicons } from '@expo/vector-icons';
@@ -21,6 +22,7 @@ export default function App() {
     Outfit_800ExtraBold,
     Inter_500Medium,
     Inter_400Regular,
+    Inter_600SemiBold,
     Inter_700Bold
   })
 
@@ -65,7 +67,7 @@ export default function App() {
               <Text style={[styles.houseDescription,styles.inter400]}>Dois blends de 100g, queijo cheddar derretido e molho especial</Text>
 
               <View style={styles.houseFooter}>
-                <Text style={[styles.housePrice,styles.outfit]}>R$ 34,90</Text>
+                <Text style={[styles.housePrice,styles.outfit]}>R$34,90</Text>
 
                 <View style={styles.button}>
                   <Ionicons name="add-outline" size={20} color="rgb(255, 255, 255)"></Ionicons>
@@ -137,7 +139,7 @@ export default function App() {
 
               <View style={styles.message}>
                 <Image height={20} width={20} source={require('../../assets/sinalConfirmacao.png')}></Image>
-                <Text style={styles.messageText}>
+                <Text style={[styles.messageText,styles.inter600]}>
                   {message}
                 </Text>
               </View>
@@ -175,6 +177,11 @@ const styles = StyleSheet.create({
   
   inter500:{
     fontFamily: "Inter_500Medium",
+    fontWeight:"100"
+  },
+
+  inter600:{
+    fontFamily:"Inter_600SemiBold",
     fontWeight:"100"
   },
 
@@ -271,7 +278,6 @@ const styles = StyleSheet.create({
     fontFamily: "Outfit",
     color: "#E65100",
     fontWeight: "800",
-
   },
 
   button: {
