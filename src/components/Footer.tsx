@@ -48,10 +48,6 @@ const styles = StyleSheet.create({
     fontWeight:"100"
   },
 
-  
-  inter500:{
-    fontFamily: "Inter_500Medium",
-    fontWeight:"100"
-  },
+
    
 })
