@@ -1,3 +1,7 @@
+import { useFonts } from "@expo-google-fonts/outfit";
+import { Outfit_700Bold } from "@expo-google-fonts/outfit"
+import { Inter_400Regular} from "@expo-google-fonts/inter"
+import { Inter_500Medium} from "@expo-google-fonts/inter"
 import { Image, ImageSourcePropType, StyleSheet, Text, View } from "react-native";
 
 type BuguerCardsProp = {
@@ -9,14 +13,20 @@ type BuguerCardsProp = {
 
 export default function BurguerCard({title,description, price, image}: BuguerCardsProp){
 
+      useFonts({
+        Outfit_700Bold,
+        Inter_500Medium,
+        Inter_400Regular
+      })
+    
       return(
         <View style={styles.cardapioCard}>
             <Image style={styles.image} source={image}></Image>
 
             <View style = {styles.cardText}>
-                <Text style={styles.cardTitle}>{title}</Text>
-                <Text style={styles.cardDescription}>{description}</Text>
-                <Text style={styles.cardPrice}>{price}</Text>
+                <Text style={[styles.cardTitle,styles.outfit]}>{title}</Text>
+                <Text style={[styles.cardDescription,styles.inter400]}>{description}</Text>
+                <Text style={[styles.cardPrice,styles.outfit]}>{price}</Text>
             </View>
         </View>
         );
@@ -71,6 +81,23 @@ const styles = StyleSheet.create({
         fontWeight:"700",
         color:"#E65100",
         marginTop:8
-    }
+    },
+
+    outfit:{
+    fontFamily: "Outfit_700Bold",
+    fontWeight:"100"
+  },
+
+  
+  inter400:{
+    fontFamily: "Inter_400Regular",
+    fontWeight:"100"
+  },
+
+  
+  inter500:{
+    fontFamily: "Inter_500Medium",
+    fontWeight:"100"
+  },
 })
 
